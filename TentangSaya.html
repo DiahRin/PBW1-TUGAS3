@@ -4,12 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PBW1 - TUGAS 3</title>
+    <style>
+        /* Tema & gaya umum */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f0;
+            color: #4a0033;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Animasi untuk judul */
+        h1 {
+            text-align: center;
+            color: #d63384;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        /* Layout utama dengan grid */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .tentang, .formulir {
+            background-color: #fff0f5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Flexbox untuk form */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, textarea {
+            margin-bottom: 15px;
+            padding: 8px;
+            border: 1px solid #d63384;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #d63384;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #b0256d;
+        }
+
+        /* Animasi keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsif: satu kolom saat layar kecil */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <h1>Selamat Datang di Situs Saya</h1>
 
     <p>Ini adalah halaman website saya. silahkan berikan kesan dan pesan anda dibawah!</p>
 
+<div class="container">
+<section class="tentang">
     <h2>Tentang Saya:</h2>
     <ol>
         <li>Nama : Diah Atmarini</li>
@@ -17,7 +100,9 @@
         <li>Prodi : Sistem Informasi</li>
         <li>Hobi : Memasak, Menyanyi, Membaca</li>
     </ol>
+</section>
 
+<section class="formulir">
     <h2>Formulir Kesan dan Pesan</h2>
     <form action="#" method="post">
         <label for="nama">Nama:</label><br>
@@ -31,5 +116,7 @@
 
         <input type="submit" value="Kirim">
     </form>
+</section>
+</div>
 </body>
 </html>
